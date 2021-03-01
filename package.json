@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "name": "mocha-bootstrap",
+  "description": "Standard test harness for using Mocha with Sinon and Chai",
+  "keywords": [
+    "mocha",
+    "test",
+    "harness"
+  ],
+  "homepage": "https://github.com/asmblah/mocha-bootstrap",
+  "author": "Dan Phillimore <dan@ovms.co> (https://ovms.co)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asmblah/mocha-bootstrap"
+  },
+  "bugs": {
+    "email": "dan@ovms.co",
+    "url": "https://github.com/asmblah/mocha-bootstrap/issues"
+  },
+  "main": "index",
+  "scripts": {
+    "lint:check": "eslint index.js 'src/**/*.js' 'test/**/*.js'",
+    "lint:fix": "eslint index.js 'src/**/*.js' 'test/**/*.js' --fix",
+    "mocha": "mocha -r . --recursive test/unit/",
+    "test": "npm run lint:check && npm run mocha"
+  },
+  "peerDependencies": {
+    "chai": "^42.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^8.3.0",
+    "sinon": "^9.2.4",
+    "sinon-chai": "^3.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "mocha": "^8.3.0",
+    "prettier": "^2.2.1",
+    "sinon": "^9.2.4",
+    "sinon-chai": "^3.3.0"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "license": "MIT"
+}
