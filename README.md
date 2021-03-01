@@ -1,5 +1,7 @@
 # Mocha test bootstrap
 
+[![Build Status](https://github.com/asmblah/mocha-bootstrap/workflows/CI/badge.svg)](https://github.com/asmblah/mocha-bootstrap/actions?query=workflow%3ACI)
+
 Sets up [Sinon][], [Chai as Promised][], [Sinon-Chai][] and [Chai as Promised][].
 
 Also installs an accelerated implementation of Sinon's `.createStubInstance(...)` method for speed.
