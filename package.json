@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "mocha-bootstrap",
   "description": "Standard test harness for using Mocha with Sinon and Chai",
   "keywords": [
