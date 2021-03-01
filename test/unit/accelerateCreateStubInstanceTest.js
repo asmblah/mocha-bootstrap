@@ -35,4 +35,15 @@ describe('accelerateCreateStubInstance()', function () {
         expect(myStub).to.be.an.instanceOf(MyClass);
         expect(myStub.myMethod()).to.equal(1234);
     });
+
+    it("should be able to restore a stubbed method's original implementation", function () {
+        var myStub;
+        accelerateCreateStubInstance(fakeSinon);
+
+        myStub = fakeSinon.createStubInstance(MyClass);
+        myStub.myMethod.restore();
+
+        expect(myStub).to.be.an.instanceOf(MyClass);
+        expect(myStub.myMethod()).to.equal('original result');
+    });
 });
