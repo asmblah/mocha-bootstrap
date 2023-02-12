@@ -25,21 +25,21 @@
     "test": "npm run lint:check && npm run mocha"
   },
   "peerDependencies": {
-    "chai": "^4.3.6",
+    "chai": "^4.3.7",
     "chai-as-promised": "^7.1.1",
-    "mocha": "^10.0.0",
-    "sinon": "^14.0.0",
+    "mocha": "^10.2.0",
+    "sinon": "^15.0.1",
     "sinon-chai": "^3.7.0"
   },
   "devDependencies": {
-    "chai": "^4.3.6",
+    "chai": "^4.3.7",
     "chai-as-promised": "^7.1.1",
-    "eslint": "^8.15.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "mocha": "^10.0.0",
-    "prettier": "^2.6.2",
-    "sinon": "^14.0.0",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.4",
+    "sinon": "^15.0.1",
     "sinon-chai": "^3.7.0"
   },
   "engines": {
