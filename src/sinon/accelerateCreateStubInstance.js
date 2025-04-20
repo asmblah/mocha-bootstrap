@@ -15,7 +15,7 @@
  * @param {Object} sinon
  */
 module.exports = function (sinon) {
-    var stubFactories = new WeakMap();
+    const stubFactories = new WeakMap();
 
     /**
      * Install an optimized version of `sinon.createStubInstance(...)`
@@ -24,20 +24,18 @@ module.exports = function (sinon) {
      * @returns {*}
      */
     sinon.createStubInstance = function (Class) {
-        var code, propertyName, propertyValue, stubFactoryFactory;
-
         if (typeof Class !== 'function') {
             throw new TypeError(
-                'createStubInstance() :: The constructor should be a function.'
+                'createStubInstance() :: The constructor should be a function.',
             );
         }
 
         if (!stubFactories.has(Class)) {
-            code = ['var methodStub, stub = Object.create(prototype);'];
+            const code = ['var methodStub, stub = Object.create(prototype);'];
 
             /*jshint forin:false */
-            for (propertyName in Class.prototype) {
-                propertyValue = Class.prototype[propertyName];
+            for (const propertyName in Class.prototype) {
+                const propertyValue = Class.prototype[propertyName];
 
                 if (typeof propertyValue !== 'function') {
                     continue;
@@ -47,20 +45,20 @@ module.exports = function (sinon) {
                     'methodStub = stub.' + propertyName + ' = sinon.stub();',
                     'methodStub.restore = function () { delete stub["' +
                         propertyName +
-                        '"]; };'
+                        '"]; };',
                 );
             }
 
             code.push('return stub;');
 
-            stubFactoryFactory = new Function(
+            const stubFactoryFactory = new Function(
                 'sinon, prototype',
-                'return function () {' + code.join('\n') + '};'
+                'return function () {' + code.join('\n') + '};',
             );
 
             stubFactories.set(
                 Class,
-                stubFactoryFactory(sinon, Class.prototype)
+                stubFactoryFactory(sinon, Class.prototype),
             );
         }
 

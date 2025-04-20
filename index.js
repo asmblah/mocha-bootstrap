@@ -10,18 +10,18 @@
 'use strict';
 
 /*global WeakMap */
-var accelerateCreateStubInstance = require('./src/sinon/accelerateCreateStubInstance'),
-    chai = require('chai'),
-    chaiAsPromised = require('chai-as-promised'),
-    sinon = require('sinon'),
-    sinonChai = require('sinon-chai');
+const accelerateCreateStubInstance = require('./src/sinon/accelerateCreateStubInstance');
+const chai = require('chai');
+const chaiAsPromised = require('chai-as-promised');
+const sinon = require('sinon');
+const sinonChai = require('sinon-chai');
 
 chai.use(chaiAsPromised);
 chai.use(sinonChai);
 
 accelerateCreateStubInstance(sinon);
 
-// Install root hooks
+// Install root hooks.
 exports.mochaHooks = {
     afterEach: function () {
         // After every test, restore all stubbed methods.

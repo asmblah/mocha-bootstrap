@@ -9,12 +9,12 @@
 
 'use strict';
 
-var accelerateCreateStubInstance = require('../../src/sinon/accelerateCreateStubInstance'),
-    expect = require('chai').expect,
-    realSinon = require('sinon');
+const accelerateCreateStubInstance = require('../../src/sinon/accelerateCreateStubInstance');
+const expect = require('chai').expect;
+const realSinon = require('sinon');
 
 describe('accelerateCreateStubInstance()', function () {
-    var fakeSinon, MyClass;
+    let fakeSinon, MyClass;
 
     beforeEach(function () {
         fakeSinon = { stub: realSinon.stub };
@@ -26,10 +26,9 @@ describe('accelerateCreateStubInstance()', function () {
     });
 
     it('should be able to create an instance of a class', function () {
-        var myStub;
         accelerateCreateStubInstance(fakeSinon);
 
-        myStub = fakeSinon.createStubInstance(MyClass);
+        const myStub = fakeSinon.createStubInstance(MyClass);
         myStub.myMethod.returns(1234);
 
         expect(myStub).to.be.an.instanceOf(MyClass);
@@ -37,10 +36,9 @@ describe('accelerateCreateStubInstance()', function () {
     });
 
     it("should be able to restore a stubbed method's original implementation", function () {
-        var myStub;
         accelerateCreateStubInstance(fakeSinon);
 
-        myStub = fakeSinon.createStubInstance(MyClass);
+        const myStub = fakeSinon.createStubInstance(MyClass);
         myStub.myMethod.restore();
 
         expect(myStub).to.be.an.instanceOf(MyClass);

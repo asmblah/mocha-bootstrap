@@ -1,8 +1,0 @@
-{
-  "plugins": [
-    "prettier"
-  ],
-  "extends": [
-    "plugin:prettier/recommended"
-  ]
-}
