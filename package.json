@@ -11,7 +11,7 @@
   "author": "Dan Phillimore <dan@ovms.co> (https://ovms.co)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/asmblah/mocha-bootstrap"
+    "url": "git+https://github.com/asmblah/mocha-bootstrap.git"
   },
   "bugs": {
     "email": "dan@ovms.co",
